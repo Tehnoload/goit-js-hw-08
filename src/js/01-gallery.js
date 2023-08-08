@@ -32,19 +32,27 @@ function onClick(event) {
       captionsData: 'alt',
       captionPosition: 'bottom',
       captionDelay: 250,
-    },
-    {
-      onShow: instance => window.addEventListener('keydown', onPresEsc),
-      onClose: instance => window.removeEventListener('keydown', onPresEsc),
+      enableKeyboard: true,
     }
+    // {
+    //   handler: null,
+    //   onShow(instance) {
+    //     this.handler = onPressEsc.bind(instance);
+    //     document.addEventListener('keydown', this.handler);
+    //   },
+    //   onClose() {
+    //     document.removeEventListener('keydown', this.handler);
+    //   },
+    // }
   );
-  gallery.on('show.simplelightbox', function () {});
+
+  gallery.on('show.simpleLightbox', function () {});
 
   event.preventDefault();
 
-  function onPresEsc(event) {
-    if (event.code === 'Escape') {
-      instance.close();
-    }
-  }
+  // function onPressEsc(event) {
+  //   if (event.code === 'Escape') {
+  //     instance.close();
+  //   }
+  // }
 }
