@@ -42,7 +42,9 @@ function populateTextarea() {
 
 function onInputSubmit(evt) {
   evt.preventDefault();
-  console.log(localStorage.getItem(STORAGE_KEY));
+  console.log(feedbackFormData);
   evt.currentTarget.reset();
   localStorage.removeItem(STORAGE_KEY);
+  feedbackFormData.message = '';
+  feedbackFormData.email = '';
 }
